@@ -1,4 +1,4 @@
-from LightBlog import db
+from ext import db
 
 class Category(db.Model):
     __tablename__='Category'

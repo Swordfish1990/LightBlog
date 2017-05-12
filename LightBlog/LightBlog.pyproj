@@ -31,7 +31,7 @@
     <Compile Include="config.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ext.py">
+    <Compile Include="LightBlog\ext.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LightBlog\controller\ueditor.py">
@@ -421,6 +421,7 @@
     <Content Include="LightBlog\static\ueditor\ueditor.config.js" />
     <Content Include="LightBlog\static\ueditor\ueditor.parse.js" />
     <Content Include="LightBlog\static\ueditor\ueditor.parse.min.js" />
+    <Content Include="LightBlog\templates\ueditor.html" />
     <Content Include="requirements.txt" />
     <Content Include="LightBlog\static\content\bootstrap.css" />
     <Content Include="LightBlog\static\content\bootstrap.min.css" />
