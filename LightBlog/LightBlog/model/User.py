@@ -1,4 +1,4 @@
-from LightBlog import db
+from ext import db
 
 class User(db.Model):
     __tablename__='User'

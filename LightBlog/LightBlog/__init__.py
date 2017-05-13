@@ -4,8 +4,9 @@ The flask application package.
 
 from flask import Flask
 from config import config
-from ext import db
+from LightBlog.ext import db
 from LightBlog.controller import front
+from LightBlog.controller import plugin
 
 
 def create_app(config_name):
@@ -13,5 +14,6 @@ def create_app(config_name):
     app.config.from_object(config[config_name])
     db.init_app(app)
     app.register_blueprint(front)
+    app.register_blueprint(plugin)
     return app
 

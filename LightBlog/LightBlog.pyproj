@@ -67,6 +67,9 @@
     <Compile Include="LightBlog\service\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LightBlog\settings.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LightBlog\tools\ueditoruploader.py">
       <SubType>Code</SubType>
     </Compile>
@@ -80,7 +83,7 @@
     <Folder Include="LightBlog\" />
     <Folder Include="LightBlog\controller\" />
     <Folder Include="LightBlog\model\" />
-    <Folder Include="LightBlog\upload\" />
+    <Folder Include="LightBlog\static\upload\" />
     <Folder Include="LightBlog\service\" />
     <Folder Include="LightBlog\static\" />
     <Folder Include="LightBlog\static\content\" />

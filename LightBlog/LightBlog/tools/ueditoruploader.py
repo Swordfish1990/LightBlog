@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*
 import os
 import re
 import json
@@ -6,7 +7,7 @@ import random
 import urllib
 import datetime
 
-from flask import url_for
+from flask import Request
 from werkzeug.utils import secure_filename
 
 
@@ -37,7 +38,7 @@ class UeditorUploader:
         "ERROR_HTTP_CONTENTTYPE": "链接contentType不正确"
     }
 
-    def __init__(self, fileobj, config, static_folder, _type=None):
+    def __init__(self, fileobj, config, static_folder,folder_url, _type=None):
         """
         :param fileobj: FileStorage, Base64Encode Data or Image URL
         :param config: 配置信息
@@ -47,6 +48,7 @@ class UeditorUploader:
         self.fileobj = fileobj
         self.config = config
         self.static_folder = static_folder
+        self.folder_url=folder_url
         self._type = _type
         if _type == 'base64':
             self.upBase64()
@@ -225,7 +227,7 @@ class UeditorUploader:
         filename = re.sub(r'^/', '', self.fullName)
         return {
             'state': self.stateInfo,
-            'url': url_for('upload', filename=filename, _external=True),
+            'url': self.folder_url.rstrip('/')+'/'+filename,
             'title': self.oriName,
             'original': self.oriName,
             'type': self.fileType,
