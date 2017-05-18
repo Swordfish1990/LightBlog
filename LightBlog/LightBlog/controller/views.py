@@ -4,11 +4,6 @@ from flask import render_template
 from . import front
 
 @front.route('/')
-def ueditor():
-    return render_template(
-        'ueditor.html',
-        title='Ueditor'
-    )
 @front.route('/home')
 def home():
     """Renders the home page."""

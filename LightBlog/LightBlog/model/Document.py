@@ -1,4 +1,4 @@
-from ext import db
+from LightBlog.ext import db
 
 class Document(db.Model):
     __tablename__='Document'
@@ -11,6 +11,7 @@ class Document(db.Model):
     CreateTime=db.Column(db.DateTime)
     UpdateTime=db.Column(db.DateTime)
     UserId=db.Column(db.Integer)
+    Partition=db.Column(db.String(255))
     
 
 
