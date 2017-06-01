@@ -8,7 +8,7 @@ from . import front
 def home():
     """Renders the home page."""
     return render_template(
-        'index.html',
+        'user.html',
         title='Home Page',
         year=datetime.now().year,
     )

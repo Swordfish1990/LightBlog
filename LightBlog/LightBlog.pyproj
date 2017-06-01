@@ -83,6 +83,7 @@
     <Folder Include="LightBlog\" />
     <Folder Include="LightBlog\controller\" />
     <Folder Include="LightBlog\model\" />
+    <Folder Include="LightBlog\static\picture\" />
     <Folder Include="LightBlog\static\upload\" />
     <Folder Include="LightBlog\service\" />
     <Folder Include="LightBlog\static\" />
@@ -148,6 +149,8 @@
     <Folder Include="LightBlog\tools\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LightBlog\static\picture\banner.png" />
+    <Content Include="LightBlog\static\scripts\tether.min.js" />
     <Content Include="LightBlog\static\ueditor\dialogs\anchor\anchor.html" />
     <Content Include="LightBlog\static\ueditor\dialogs\attachment\attachment.css" />
     <Content Include="LightBlog\static\ueditor\dialogs\attachment\attachment.html" />
@@ -424,7 +427,10 @@
     <Content Include="LightBlog\static\ueditor\ueditor.config.js" />
     <Content Include="LightBlog\static\ueditor\ueditor.parse.js" />
     <Content Include="LightBlog\static\ueditor\ueditor.parse.min.js" />
+    <Content Include="LightBlog\templates\content.html" />
+    <Content Include="LightBlog\templates\layout2.html" />
     <Content Include="LightBlog\templates\ueditor.html" />
+    <Content Include="LightBlog\templates\user.html" />
     <Content Include="requirements.txt" />
     <Content Include="LightBlog\static\content\bootstrap.css" />
     <Content Include="LightBlog\static\content\bootstrap.min.css" />

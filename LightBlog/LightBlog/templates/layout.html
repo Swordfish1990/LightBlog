@@ -11,9 +11,11 @@
 
 <body>
     <div class="blog-header">
-
+        <div class="container">
+            <img src="/static/picture/banner.png"/>
+        </div>
     </div>
-    <div class="navbar navbar-expand-md navbar-light bg-faded">
+    <div class="navbar navbar-expand-md navbar-inverse bg-inverse mt-0">
         <div class="container">
             <a class="navbar-brand" href="#">Container</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +43,6 @@
     </div>
     <div class="container body-content">
         {% block content %}{% endblock %}
-        <hr />
     </div>
     <div class="blog-footer">
         <div class="container">

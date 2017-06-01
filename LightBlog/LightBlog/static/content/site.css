@@ -1,5 +1,4 @@
 body {
-    background: rgb(56, 250, 165);
 }
 
 .navbar {
@@ -7,7 +6,7 @@ body {
 }
 
 .blog-header {
-    padding: 100px 0px;
+    background:rgb(241,124,103);
 }
 
 .blog-footer {
@@ -54,4 +53,7 @@ ul.blog-link-list li a {
     padding-bottom: 15px;
     text-align: center;
     background-color: #232323;
+}
+.card{
+    margin-bottom:20px;
 }
