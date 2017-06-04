@@ -428,9 +428,16 @@
     <Content Include="LightBlog\static\ueditor\ueditor.parse.js" />
     <Content Include="LightBlog\static\ueditor\ueditor.parse.min.js" />
     <Content Include="LightBlog\templates\content.html" />
+    <Content Include="LightBlog\templates\document_update.html" />
     <Content Include="LightBlog\templates\layout2.html" />
+    <Content Include="LightBlog\templates\login.html" />
     <Content Include="LightBlog\templates\ueditor.html" />
+    <Content Include="LightBlog\templates\category.html" />
+    <Content Include="LightBlog\templates\document.html" />
     <Content Include="LightBlog\templates\user.html" />
+    <Content Include="LightBlog\templates\category_create.html" />
+    <Content Include="LightBlog\templates\document_create.html" />
+    <Content Include="LightBlog\templates\user_create.html" />
     <Content Include="requirements.txt" />
     <Content Include="LightBlog\static\content\bootstrap.css" />
     <Content Include="LightBlog\static\content\bootstrap.min.css" />

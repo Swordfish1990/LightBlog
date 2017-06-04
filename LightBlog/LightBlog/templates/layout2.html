@@ -1,33 +1,35 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
 </head>
 
 <body style="min-height: 75rem;padding-top: 4.5rem;">
     <nav class="navbar navbar-expand-md navbar-inverse fixed-top bg-primary mt-0">
-        <a class="navbar-brand" href="#">Fixed navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="container">
+            <a class="navbar-brand" href="#">博客管理</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">文章</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">分类</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">用户</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     <div class="container body-content">
