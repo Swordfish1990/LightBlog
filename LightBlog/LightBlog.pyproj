@@ -31,6 +31,15 @@
     <Compile Include="config.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LightBlog\controller\AdminController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LightBlog\decorator\Parameter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LightBlog\decorator\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LightBlog\ext.py">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +64,18 @@
     <Compile Include="LightBlog\model\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LightBlog\repository\CategoryRepository.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LightBlog\repository\DocumentRepository.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LightBlog\repository\UserRepository.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LightBlog\repository\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LightBlog\service\CategoryService.py">
       <SubType>Code</SubType>
     </Compile>
@@ -70,6 +91,12 @@
     <Compile Include="LightBlog\settings.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LightBlog\tools\EncryptHelper.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LightBlog\tools\MD5Helper.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LightBlog\tools\ueditoruploader.py">
       <SubType>Code</SubType>
     </Compile>
@@ -82,7 +109,9 @@
   <ItemGroup>
     <Folder Include="LightBlog\" />
     <Folder Include="LightBlog\controller\" />
+    <Folder Include="LightBlog\decorator\" />
     <Folder Include="LightBlog\model\" />
+    <Folder Include="LightBlog\repository\" />
     <Folder Include="LightBlog\static\picture\" />
     <Folder Include="LightBlog\static\upload\" />
     <Folder Include="LightBlog\service\" />

@@ -1,45 +1,40 @@
-from LightBlog.ext import db
 from LightBlog.model.User import User
+from LightBlog.repository.UserRepository import UserRepository
+from LightBlog.tools.EncryptHelper import EncryptHelper
 
 class UserService(object):
     """description of class"""
 
     def __init__(self):
-        self.Session=db.session
+        self.UserRepository=UserRepository()
+        self.MD5=md5.new()
 
     def AddUser(self,user):
-        self.Session.add(user)
-        self.Session.commit()
+        user.Password=EncryptHelper.GetMD5(user.Password)
+        self.UserRepository.AddUser(user)
         return None
 
-    def GetUser(self,id):
-        user=self.Session.query(User).get(id)
-        return user
-
     def RemoveUser(self,id):
-        self.Session.query(User).filter(User.Id==id).delete(synchronize_session=False)
-        self.Session.commit()
+        self.UserRepository.RemoveUser(id)
         return None
 
     def ListUsers(self,start,stop):
-        users=self.Session.query(User).order_by(User.Id).slice(start,stop)
-        return users
+        return self.UserRepository.ListUsers(start,stop)
 
-    def UpdateUser(self,user):
-        self.Session.merge(user)
-        self.Session.commit()
+    def ChangeUserName(self,id,name):
+        self.UserRepository.ModifyUser(id,Name=name)
         return None
 
-    def ModifyUser(self,id,**changes):
-        self.Session.query(User).filter(User.Id==id).update(changes,synchronize_session=False)
-        self.Session.commit()
+    def ChangeUserPassword(self,id,password):
+        password=EncryptHelper.GetMD5(password)
+        self.UserRepository.ModifyUser(id,Password=password)
         return None
 
     def GetUserNumber(self):
-        number=self.Session.query(User).count()
-        return number
+        return self.UserRepository.GetUserNumber()
 
-    def Execute(self,sql):
-        results=self.Session.execute(sql).fetchall()
-        return results
+    def Login(self,user_name,user_password):
+        user_password=EncryptHelper.GetMD5(user_password)
+        user=self.UserRepository.GetUserByFilter(Name=user_name,Password=user_password)
+        return user
 

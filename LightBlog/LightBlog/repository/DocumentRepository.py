@@ -1,18 +1,22 @@
+from LightBlog.ext import db
+from LightBlog.model.User import User
+from LightBlog.model.Category import Category
 from LightBlog.model.Document import Document
-from LightBlog.repository.DocumentRepository import DocumentRepository
 
-class DocumentService(object):
+class DocumentRepository(object):
     """description of class"""
 
     def __init__(self):
-        self.DocumentRespository=DocumentRepository()
+        self.Session=db.session
 
     def AddDocument(self,document):
-        self.DocumentRespository.AddDocument(document)
+        self.Session.add(document)
+        self.Session.commit()
         return None
 
     def GetDocument(self,id):
-        return self.DocumentRespository.GetDocument(id)
+        document=self.Session.query(Document).get(id)
+        return document
 
     def RemoveDocument(self,id):
         self.Session.query(Document).filter(Document.Id==id).delete(synchronize_session=False)
@@ -56,4 +60,3 @@ class DocumentService(object):
     def Execute(self,sql):
         results=self.Session.execute(sql).fetchall()
         return results
-

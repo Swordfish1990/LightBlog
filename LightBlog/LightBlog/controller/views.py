@@ -5,7 +5,7 @@ from . import front
 
 @front.route('/')
 @front.route('/home')
-def home():
+def home(n=1):
     """Renders the home page."""
     return render_template(
         'login.html',
