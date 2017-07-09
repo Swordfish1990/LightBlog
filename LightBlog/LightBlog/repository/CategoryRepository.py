@@ -21,7 +21,11 @@ class CategoryRepository(object):
         return None
     
     def ListCategories(self,start,stop):
-        categories=self.Session.query(Category).order_by(Category.Id).slice(start,stop)
+        categories=self.Session.query(Category).order_by(Category.Id).slice(start,stop).all()
+        return categories
+
+    def ListAllCategories(self):
+        categories=self.Session.query(Category).order_by(Category.Id).all()
         return categories
 
     def UpdateCategory(self,category):

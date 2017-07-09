@@ -23,17 +23,17 @@ class DocumentRepository(object):
         self.Session.commit()
         return None
 
-    def ListDocuments(self,start,stop):
-        documents=self.Session.query(Document).order_by(Document.CreateTime).slice(start,stop)
-        return documents
+    def ListDocumentsInfo(self,start,stop):
+        results=self.Session.query(Document.Id,Document.Title,Document.CreateTime,Document.UpdateTime,User.Name,Category.Name).join(User,Document.UserId==User.Id).join(Category,Document.CategoryId==Category.Id).order_by(Document.CreateTime.desc()).slice(start,stop).all()
+        return [{'Id':item[0],'Title':item[1],'CreateTime':item[2],'UpdateTime':item[3],'User':item[4],'Category':item[5]} for item in results]
 
-    def ListDocumentsByCategory(self,category_id,start,stop):
-        documents=self.Session.query(Document).filter(Document.CategoryId==category_id).order_by(Document.CreateTime).slice(start,stop)
-        return documents
+    def ListDocumentsInfoByCategory(self,category_id,start,stop):
+        results=self.Session.query(Document.Id,Document.Title,Document.CreateTime,Document.UpdateTime,User.Name,Category.Name).join(User,Document.UserId==User.Id).filter(Document.CategoryId==category_id).join(Category,Document.CategoryId==Category.Id).order_by(Document.CreateTime.desc()).slice(start,stop).all()
+        return [{'Id':item[0],'Title':item[1],'CreateTime':item[2],'UpdateTime':item[3],'User':item[4],'Category':item[5]} for item in results]
 
-    def ListDocumentsByPartition(self,partition,start,stop):
-        documents=self.Session.query(Document).filter(Document.Partition==partition).order_by(Document.CreateTime).slice(start,stop)
-        return documents
+    def ListDocumentsInfoByPartition(self,partition,start,stop):
+        results=self.Session.query(Document.Id,Document.Title,Document.CreateTime,Document.UpdateTime,User.Name,Category.Name).join(User,Document.UserId==User.Id).filter(Document.Partition==partition).join(Category,Document.CategoryId==Category.Id).order_by(Document.CreateTime).slice(start,stop).all()
+        return [{'Id':item[0],'Title':item[1],'CreateTime':item[2],'UpdateTime':item[3],'User':item[4],'Category':item[5]} for item in results]
 
     def UpdateDocument(self,document):
         self.Session.merge(document)
@@ -45,15 +45,15 @@ class DocumentRepository(object):
         self.Session.commit()
         return None
 
-    def GetDocumentNumber(self):
+    def CountDocument(self):
         number=self.Session.query(Document).count()
         return number
 
-    def GetDocumentNumberByCategory(self,category_id):
+    def CountDocumentByCategory(self,category_id):
         number=self.Session.query(Document).filter(Document.CategoryId==category_id).count()
         return number
 
-    def GetDocumentNumberByPartition(self,partition):
+    def CountDocumentByPartition(self,partition):
         number=self.Session.query(Document).filter(Document.Partition==partition).count()
         return number
 

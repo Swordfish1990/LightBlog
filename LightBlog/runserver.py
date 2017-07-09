@@ -2,6 +2,12 @@
 This script runs the LightBlog application using a development server.
 """
 
+import sys
+defaultencoding = 'utf-8'
+if sys.getdefaultencoding() != defaultencoding:
+    reload(sys)
+    sys.setdefaultencoding(defaultencoding)
+
 from os import environ
 from LightBlog import create_app
 

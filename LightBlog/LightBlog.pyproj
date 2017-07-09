@@ -76,25 +76,10 @@
     <Compile Include="LightBlog\repository\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LightBlog\service\CategoryService.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LightBlog\service\DocumentService.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LightBlog\service\UserService.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LightBlog\service\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="LightBlog\settings.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LightBlog\tools\EncryptHelper.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LightBlog\tools\MD5Helper.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LightBlog\tools\ueditoruploader.py">
@@ -114,7 +99,6 @@
     <Folder Include="LightBlog\repository\" />
     <Folder Include="LightBlog\static\picture\" />
     <Folder Include="LightBlog\static\upload\" />
-    <Folder Include="LightBlog\service\" />
     <Folder Include="LightBlog\static\" />
     <Folder Include="LightBlog\static\content\" />
     <Folder Include="LightBlog\static\fonts\" />
